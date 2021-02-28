@@ -21,7 +21,7 @@
                            name="title"
                            type="text"
                            class="form-control @error('title') is-invalid @enderror"
-                           value="{{ old('title') }}"
+                           value="{{ old('title') ?? $user->profile->title }}"
                            {{-- required --}}
                            autocomplete="title" autofocus>
 
@@ -39,7 +39,7 @@
                            name="description"
                            type="text"
                            class="form-control @error('description') is-invalid @enderror"
-                           value="{{ old('description') }}"
+                           value="{{ old('description') ?? $user->profile->description }}"
                            {{-- required --}}
                            autocomplete="description" autofocus>
 
@@ -57,7 +57,7 @@
                            name="url"
                            type="text"
                            class="form-control @error('url') is-invalid @enderror"
-                           value="{{ old('url') }}"
+                           value="{{ old('url') ?? $user->profile->url }}"
                            {{-- required --}}
                            autocomplete="url" autofocus>
 
@@ -69,7 +69,7 @@
                 </div>
 
                 <div class="row">
-                    <label for="image" class="col-md-4 col-form-label">Post Image</label>
+                    <label for="image" class="col-md-4 col-form-label">Profile Image</label>
 
                     <input type="file" class="form-control-file" id="image" name="image" {{-- required--}}>
 
@@ -79,7 +79,7 @@
                 </div>
 
                 <div class="row pt-3">
-                    <button class="btn btn-primary">Add New Post</button>
+                    <button class="btn btn-primary">Save Profile</button>
                 </div>
 
             </div>
